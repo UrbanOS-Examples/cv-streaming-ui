@@ -1,0 +1,27 @@
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
+
+main-app-element {
+  @include flex-column();
+
+  height: 100%;
+  width: 100%;
+
+  .main-content {
+    @include flex-column();
+    
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+
+    map-element {
+      height: calc(100% - #{$filter-height});
+      width: 100%;
+
+      @media only screen and (min-width: $mobilebreakpoint) {
+        height: 100%;
+      }
+    }
+  }
+}
